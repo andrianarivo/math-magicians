@@ -11,7 +11,6 @@
 
 # 📗 Table of Contents
 
-- [� Table of Contents](#-table-of-contents)
 - [📖 Math Magicians ](#-math_magicians-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
@@ -170,6 +169,6 @@ I would like to thank Microverse for the materials
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/andrianarivo/math-magicians/MIT.md) licensed.
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
