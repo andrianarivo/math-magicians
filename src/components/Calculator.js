@@ -1,46 +1,74 @@
 import './Calculator.css';
+import { useState } from 'react';
 import Button from './Button';
+import calculate from '../logic/calculate';
 
-const Calculator = () => (
-  <div className="calculator">
-    <Button
-      text="0"
-      textAlign="right"
-      color="#858693"
-      textColor="#fff"
-      cursor="auto"
-    />
-    <div className="row">
-      <Button text="AC" />
-      <Button text="+/-" />
-      <Button text="%" />
-      <Button text="÷" color="#f5913e" />
+const Calculator = () => {
+  const [calculatedObj, setCalculatedObj] = useState({
+    next: null,
+    total: null,
+    operator: null,
+  });
+  const handleClick = (buttonName) => {
+    const newObj = calculate(calculatedObj, buttonName);
+    setCalculatedObj(newObj);
+  };
+
+  const resultText = () => {
+    const { next, operation, total } = calculatedObj;
+    console.log('calculate', calculatedObj);
+    let resultString = '0';
+    if (next || operation) {
+      resultString = next ?? operation;
+    }
+    if (total && !next && !operation) {
+      resultString = total;
+    }
+    return resultString;
+  };
+
+  return (
+    <div className="calculator">
+      <Button
+        text={`${resultText()}`}
+        textAlign="right"
+        color="#858693"
+        textColor="#fff"
+        cursor="auto"
+        onClick={() => {}}
+      />
+      <div className="row">
+        <Button text="AC" onClick={handleClick} />
+        <Button text="+/-" onClick={handleClick} />
+        <Button text="%" onClick={handleClick} />
+        <Button text="÷" color="#f5913e" onClick={handleClick} />
+      </div>
+      <div className="row">
+        <Button text="7" onClick={handleClick} />
+        <Button text="8" onClick={handleClick} />
+        <Button text="9" onClick={handleClick} />
+        <Button text="x" color="#f5913e" onClick={handleClick} />
+      </div>
+      <div className="row">
+        <Button text="4" onClick={handleClick} />
+        <Button text="5" onClick={handleClick} />
+        <Button text="6" onClick={handleClick} />
+        <Button text="-" color="#f5913e" onClick={handleClick} />
+      </div>
+      <div className="row">
+        <Button text="1" onClick={handleClick} />
+        <Button text="2" onClick={handleClick} />
+        <Button text="3" onClick={handleClick} />
+        <Button text="+" color="#f5913e" onClick={handleClick} />
+      </div>
+      <div className="row">
+        <Button text="0" flex={2} onClick={handleClick} />
+        <Button text="." onClick={handleClick} />
+        <Button text="=" color="#f5913e" onClick={handleClick} />
+      </div>
     </div>
-    <div className="row">
-      <Button text="7" />
-      <Button text="8" />
-      <Button text="9" />
-      <Button text="x" color="#f5913e" />
-    </div>
-    <div className="row">
-      <Button text="4" />
-      <Button text="5" />
-      <Button text="6" />
-      <Button text="-" color="#f5913e" />
-    </div>
-    <div className="row">
-      <Button text="1" />
-      <Button text="2" />
-      <Button text="3" />
-      <Button text="+" color="#f5913e" />
-    </div>
-    <div className="row">
-      <Button text="0" flex={2} />
-      <Button text="." />
-      <Button text="=" color="#f5913e" />
-    </div>
-  </div>
-);
+  );
+};
 
 Calculator.defaultProps = {};
 

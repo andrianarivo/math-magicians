@@ -2,7 +2,7 @@ import './Button.css';
 import PropTypes from 'prop-types';
 
 const Button = (props) => {
-  const { text, textAlign, flex, color, textColor, cursor } = props;
+  const { text, textAlign, flex, color, textColor, cursor, onClick } = props;
   let alignment = 'center';
   let paddingRight = '0';
   switch (textAlign) {
@@ -14,8 +14,13 @@ const Button = (props) => {
     case 'center':
       break;
   }
+
+  const handleClick = () => {
+    onClick(text);
+  };
+
   return (
-    <div
+    <button
       className="button"
       style={{
         justifyContent: alignment,
@@ -25,9 +30,12 @@ const Button = (props) => {
         paddingRight,
         cursor,
       }}
+      type="button"
+      onClick={handleClick}
+      onKeyDown={handleClick}
     >
       <p>{text}</p>
-    </div>
+    </button>
   );
 };
 
@@ -41,6 +49,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
   textAlign: PropTypes.string,
   flex: PropTypes.number,
   color: PropTypes.string,
