@@ -16,7 +16,6 @@ const Calculator = () => {
 
   const resultText = () => {
     const { next, operation, total } = calculatedObj;
-    console.log('calculate', calculatedObj);
     let resultString = '0';
     if (next || operation) {
       resultString = next ?? operation;
