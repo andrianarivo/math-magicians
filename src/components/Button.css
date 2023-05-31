@@ -1,0 +1,9 @@
+.button {
+  display: flex;
+  border: 1px solid #9d9da7;
+  align-items: center;
+}
+
+.button p {
+  font-weight: bold;
+}
