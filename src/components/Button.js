@@ -1,7 +1,7 @@
 import './Button.css';
 import PropTypes from 'prop-types';
 
-const Button = (props) => {
+function Button(props) {
   const { text, textAlign, flex, color, textColor, cursor, onClick } = props;
   let alignment = 'center';
   let paddingRight = '0';
@@ -37,7 +37,7 @@ const Button = (props) => {
       <p>{text}</p>
     </button>
   );
-};
+}
 
 Button.defaultProps = {
   textAlign: 'center',
