@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Button from './Button';
 import calculate from '../logic/calculate';
 
-const Calculator = () => {
+function Calculator() {
   const [calculatedObj, setCalculatedObj] = useState({
     next: null,
     total: null,
@@ -67,7 +67,7 @@ const Calculator = () => {
       </div>
     </div>
   );
-};
+}
 
 Calculator.defaultProps = {};
 
