@@ -1,5 +1,5 @@
-import './Quote.css';
 import { useEffect, useState } from 'react';
+import styles from '../styles/Quote.module.css';
 import getQuote from '../logic/fetcher';
 import loadingGif from '../assets/loading.gif';
 import errorImage from '../assets/error.png';
@@ -23,23 +23,23 @@ function Quote() {
 
   if (isLoading) {
     return (
-      <div className="info">
+      <div className={styles.info}>
         <img src={loadingGif} alt="loading dog" />
-        <h2>Loading...</h2>
+        <h3>Loading...</h3>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="info">
+      <div className={styles.info}>
         <img className="error-image" src={errorImage} alt="error" />
-        <h1>Sorry, an error occurred!</h1>
+        <h3>Sorry, an error occurred!</h3>
       </div>
     );
   }
 
-  return <h1>{`"${data[0].quote}"`}</h1>;
+  return <h3 className={styles.quote}>{`"${data[0].quote}"`}</h3>;
 }
 
 export default Quote;

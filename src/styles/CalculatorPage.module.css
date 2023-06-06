@@ -1,0 +1,10 @@
+.calcontainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.calwrapper {
+  aspect-ratio: 3/4;
+  width: 50%;
+}

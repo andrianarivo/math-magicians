@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import styles from '../styles/NavBar.module.css';
 
 export default function NavBar() {
   const links = [
@@ -7,11 +8,11 @@ export default function NavBar() {
     { path: 'quote', text: 'Quotes' },
   ];
   return (
-    <nav>
+    <nav className={styles.nav}>
       <h2>Math Magicians</h2>
-      <ul>
+      <ul className={styles.ul}>
         {links.map((link) => (
-          <li key={link.path}>
+          <li className={styles.li} key={link.path}>
             <NavLink to={link.path}>{link.text}</NavLink>
           </li>
         ))}
