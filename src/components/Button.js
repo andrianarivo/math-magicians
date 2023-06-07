@@ -1,5 +1,5 @@
-import './Button.css';
 import PropTypes from 'prop-types';
+import styles from '../styles/Button.module.css';
 
 function Button(props) {
   const { text, textAlign, flex, color, textColor, cursor, onClick } = props;
@@ -21,7 +21,7 @@ function Button(props) {
 
   return (
     <button
-      className="button"
+      className={styles.button}
       style={{
         justifyContent: alignment,
         color: textColor,

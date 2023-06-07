@@ -1,5 +1,5 @@
-import './Calculator.css';
 import { useState } from 'react';
+import styles from '../styles/Calculator.module.css';
 import Button from './Button';
 import calculate from '../logic/calculate';
 
@@ -27,7 +27,7 @@ function Calculator() {
   };
 
   return (
-    <div className="calculator">
+    <div className={styles.calculator}>
       <Button
         text={`${resultText()}`}
         textAlign="right"
@@ -36,31 +36,31 @@ function Calculator() {
         cursor="auto"
         onClick={() => {}}
       />
-      <div className="row">
+      <div className={styles.row}>
         <Button text="AC" onClick={handleClick} />
         <Button text="+/-" onClick={handleClick} />
         <Button text="%" onClick={handleClick} />
         <Button text="÷" color="#f5913e" onClick={handleClick} />
       </div>
-      <div className="row">
+      <div className={styles.row}>
         <Button text="7" onClick={handleClick} />
         <Button text="8" onClick={handleClick} />
         <Button text="9" onClick={handleClick} />
         <Button text="x" color="#f5913e" onClick={handleClick} />
       </div>
-      <div className="row">
+      <div className={styles.row}>
         <Button text="4" onClick={handleClick} />
         <Button text="5" onClick={handleClick} />
         <Button text="6" onClick={handleClick} />
         <Button text="-" color="#f5913e" onClick={handleClick} />
       </div>
-      <div className="row">
+      <div className={styles.row}>
         <Button text="1" onClick={handleClick} />
         <Button text="2" onClick={handleClick} />
         <Button text="3" onClick={handleClick} />
         <Button text="+" color="#f5913e" onClick={handleClick} />
       </div>
-      <div className="row">
+      <div className={styles.row}>
         <Button text="0" flex={2} onClick={handleClick} />
         <Button text="." onClick={handleClick} />
         <Button text="=" color="#f5913e" onClick={handleClick} />
