@@ -34,6 +34,7 @@ function Calculator() {
         color="#858693"
         textColor="#fff"
         cursor="auto"
+        testId="result-text-button"
         onClick={() => {}}
       />
       <div className={styles.row}>

@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import styles from '../styles/Button.module.css';
 
 function Button(props) {
-  const { text, textAlign, flex, color, textColor, cursor, onClick } = props;
+  const { text, textAlign, flex, color, textColor, cursor, onClick, testId } =
+    props;
   let alignment = 'center';
   let paddingRight = '0';
   switch (textAlign) {
@@ -21,6 +22,7 @@ function Button(props) {
 
   return (
     <button
+      data-testid={testId}
       className={styles.button}
       style={{
         justifyContent: alignment,
@@ -45,11 +47,13 @@ Button.defaultProps = {
   color: '#e0e0e0',
   textColor: '#000',
   cursor: 'pointer',
+  testId: 'button',
 };
 
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
+  testId: PropTypes.string,
   textAlign: PropTypes.string,
   flex: PropTypes.number,
   color: PropTypes.string,

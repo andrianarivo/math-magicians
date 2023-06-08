@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Layout component render 1`] = `
+<div
+  className="wrapper"
+>
+  <nav
+    className="nav"
+  >
+    <h2>
+      Math Magicians
+    </h2>
+    <ul
+      className="ul"
+    >
+      <li
+        className="li"
+      >
+        <a
+          aria-current="page"
+          className="active"
+          href="/"
+          onClick={[Function]}
+        >
+          Home
+        </a>
+      </li>
+      <li
+        className="li"
+      >
+        <a
+          className=""
+          href="/calculator"
+          onClick={[Function]}
+        >
+          Calculator
+        </a>
+      </li>
+      <li
+        className="li"
+      >
+        <a
+          className=""
+          href="/quote"
+          onClick={[Function]}
+        >
+          Quotes
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

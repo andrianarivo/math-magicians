@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Quote component render 1`] = `
+<div
+  className="info"
+>
+  <img
+    alt="loading dog"
+    src="loading.gif"
+  />
+  <h3>
+    Loading...
+  </h3>
+</div>
+`;
